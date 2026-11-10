@@ -25,6 +25,14 @@ models:
   - name: fct_order_items
     description: "Позиции заказов. Одна строка на товар в заказе."
     columns:
+      - name: quantity
+        description: "Количество единиц товара в позиции."
+        data_tests: [non_negative]
+
+      - name: unit_price
+        description: "Цена одной единицы товара в рублях."
+        data_tests: [non_negative]
+
       - name: order_item_id
         description: "Идентификатор позиции, сформированный из номера заказа и идентификатора товара."
         data_tests: [unique, not_null]
