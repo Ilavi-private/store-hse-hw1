@@ -1,3 +1,5 @@
+{{ config(distributed_by='order_id') }}
+
 SELECT
     items.order_item_id,
     items.order_id,

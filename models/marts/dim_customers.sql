@@ -1,3 +1,5 @@
+{{ config(distributed_replicated=true) }}
+
 SELECT
     customers.customer_id,
     customers.registered_at,

@@ -1,3 +1,5 @@
+{{ config(distributed_replicated=true) }}
+
 SELECT
     p.product_id,
     p.product_name,

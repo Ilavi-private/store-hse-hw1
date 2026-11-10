@@ -1,3 +1,4 @@
+{{ config(distributed_replicated=true) }}
 {% set orders = ref('stg_shop__orders') %}
 {% set start_date = "(SELECT MIN(order_date) FROM " ~ orders ~ ")" %}
 {% set end_date = "(SELECT MAX(order_date) + 1 FROM " ~ orders ~ ")" %}
