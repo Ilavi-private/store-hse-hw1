@@ -109,7 +109,10 @@ models:
         description: "{{ doc('confirmed_order') }}"
 
   - name: fct_orders
-    description: "{{ doc('confirmed_order') }}"
+    description: >
+      Факт заказов: одна строка — один заказ. Тестовые заказы исключены.
+      К заказу пристыкованы итоги по платежам; подтвержденная покупка — статус paid
+      и хотя бы одна успешная оплата (возврат оплатой не считается).
     columns:
       - name: items_count
         description: "Число разных товаров в заказе."
@@ -150,5 +153,5 @@ models:
       - name: first_paid_at
         description: "Время первой успешной оплаты; пусто, если оплат нет."
       - name: is_confirmed
-        description: "Подтвержденная покупка: статус paid и хотя бы одна успешная оплата."
+        description: "{{ doc('confirmed_order') }}"
         data_tests: [not_null]
